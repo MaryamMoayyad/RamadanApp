@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RamadanApp</string>
+    <string name="welcomeString">Welcome the month of worship</string>
+    <string name="_4h_26m_22s">4h: 26m: 22s</string>
+    <string name="the_remaining_time_for_iftar">The remaining time for Iftar</string>
+    <string name="adhan_times">Adhan times</string>
+    <string name="constipation_time">Constipation time</string>
+    <string name="_16h_44m_54s">16h: 44m: 54s</string>
+    <string name="maghrib_prayer">Maghrib prayer</string>
+    <string name="_7_20_pm">7:20 PM</string>
+    <string name="_12_20_pm">12:20 PM</string>
+    <string name="dhuhr_prayer">Dhuhr prayer</string>
+    <string name="_4_30_am">4:30 AM</string>
+    <string name="morning_prayer">Morning prayer</string>
+</resources>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="550dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/lottieBreakFast"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_rawRes="@raw/break_fast_animation"
+            motion:visibilityMode="ignore" />
+        <Constraint
+            android:id="@+id/adhanTimes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lottieBreakFast"
+            motion:visibilityMode="ignore"/>
+        <Constraint
+            android:id="@+id/linerCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/adhanTimes"
+            motion:visibilityMode="ignore" />
+
+        <Constraint
+            android:id="@+id/cardconstipationTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/linerCards"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            motion:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/cardIfarTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/cardconstipationTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            motion:visibilityMode="ignore"/>
+
+        <Constraint
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="550dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:visibility="gone" />
+        <Constraint
+            android:id="@+id/textWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/img"
+            android:visibility="gone" />
+
+        <Constraint
+            android:id="@+id/adhanTimes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lottieBreakFast"
+            motion:visibilityMode="ignore" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@id/start"
+        motion:duration="2000">
+        <OnClick
+            app:dragDirection="dragDown"
+            app:touchAnchorId="@id/img"
+            />
+        <KeyFrameSet>
+
+            <KeyAttribute
+                motion:framePosition="0"
+                app:motionTarget="@id/lottieBreakFast"
+                android:translationY="-100dp"/>
+            <KeyAttribute
+                motion:framePosition="100"
+                app:motionTarget="@id/lottieBreakFast"
+                android:translationX="0dp"/>
+            <KeyAttribute
+                motion:framePosition="0"
+                app:motionTarget="@id/adhanTimes"
+                android:translationY="-100dp"/>
+            <KeyAttribute
+                motion:framePosition="100"
+                app:motionTarget="@id/adhanTimes"
+                android:translationY="0dp"/>
+
+            <KeyAttribute
+                motion:framePosition="0"
+                motion:motionTarget="@id/linerCards"
+                android:translationY="0dp"/>
+            <KeyAttribute
+                motion:framePosition="100"
+                motion:motionTarget="@id/cardconstipationTime"
+                android:translationX="0dp" />
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>
